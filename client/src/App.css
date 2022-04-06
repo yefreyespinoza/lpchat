@@ -4,6 +4,7 @@
 }
 :root {
   --title-color: #fff;
+  --white: #fff;
   --bg-app: #282c34;
   --border: 1px solid #fff;
 }
@@ -19,6 +20,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-auto::-webkit-scrollbar {
+  display: none;
 }
 
 /* header  */
@@ -36,8 +43,11 @@
 
 .header-logo {
   margin-left: 50px;
-  color: #f0f;
   cursor: pointer;
+}
+.header-logo a {
+  text-decoration: none;
+  color: #f0f;
 }
 .header-nav {
   margin-right: 50px;
@@ -70,7 +80,6 @@
 /*-------- profile section --------- */
 .profile-section {
   flex: 0.5;
-  display: none;
 }
 
 .profile {
@@ -102,10 +111,6 @@
 .michis-section {
   flex: 1;
   background-color: #444;
-  overflow-y: auto;
-}
-.michis-section::-webkit-scrollbar {
-  display: none;
 }
 
 /* michis section -michi item  */
@@ -158,4 +163,25 @@
 .michi-items-icon {
   color: #fff;
   cursor: pointer;
+}
+
+/*=============== friends section ============================= */
+.friends-section {
+  flex: 1;
+  background-color: #444;
+}
+
+/* friends item  */
+
+.friend-item {
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid red;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: var(--bg-app);
+  padding: 10px;
+  color: var(--white);
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Profile() {
   return (
     <div className="profile">
@@ -5,8 +6,11 @@ function Profile() {
         <div className="p-s-username">
           <span>@username</span>
         </div>
+
         <div className="won-games">
-          <p>friends</p>
+          <p>
+            <Link to={"/friends"}>Friends</Link>
+          </p>
           <p>30</p>
         </div>
         <div className="all-games">
@@ -24,6 +28,9 @@ function Profile() {
         <div className="won-games">
           <p>partidas en curso</p>
           <p>40</p>
+        </div>
+        <div className="p-s-username">
+          <span>crear nuevo</span>
         </div>
       </div>
 
