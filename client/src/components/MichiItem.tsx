@@ -1,8 +1,18 @@
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-function MichiItem() {
+import { Link } from "react-router-dom";
+import { GameItemI } from "../types/types";
+function MichiItem(props: GameItemI) {
   return (
     <div className="michi-item">
+      {props.openMenu && (
+        <div className="michi-options-menu">
+          <Link to={"/game"}>go</Link>
+          <Link to={"/game-config"}>config</Link>
+          <span>delete</span>
+        </div>
+      )}
+
       <div className="michi-item-users">
         <div className="michi-item-user">
           <span>username1</span>
@@ -15,10 +25,10 @@ function MichiItem() {
         </div>
       </div>
       <div className="michi-item-options">
-        <div className="michi-item-go">
+        <Link to={"/game"} className="michi-item-go">
           <span>go</span>
-        </div>
-        <div className="michi-items-icon">
+        </Link>
+        <div className="michi-items-icon" onClick={props.openMenuHandle}>
           <BsThreeDotsVertical size={40} />
         </div>
       </div>

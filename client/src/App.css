@@ -8,7 +8,9 @@
   --bg-app: #282c34;
   --border: 1px solid #fff;
 }
-
+a {
+  text-decoration: none;
+}
 .App-link {
   color: #61dafb;
 }
@@ -61,7 +63,7 @@
 }
 .number-not {
   position: absolute;
-  color: #f88;
+  color: #f00;
   font-size: 15px;
   right: -8px;
   top: -7px;
@@ -80,6 +82,10 @@
 /*-------- profile section --------- */
 .profile-section {
   flex: 0.5;
+  overflow-y: scroll;
+}
+.profile-section::-webkit-scrollbar {
+  display: none;
 }
 
 .profile {
@@ -116,6 +122,7 @@
 /* michis section -michi item  */
 
 .michi-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -164,7 +171,28 @@
   color: #fff;
   cursor: pointer;
 }
-
+.michi-options-menu {
+  position: absolute;
+  background-color: #999;
+  display: flex;
+  flex-direction: column;
+  right: 50px;
+  top: 0;
+  padding: 0 10px;
+  z-index: 100;
+  border-radius: 4px;
+}
+.michi-options-menu > * {
+  color: #fff;
+  font-size: 14px;
+  padding: 0 15px 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  margin: 1px 0;
+  font-weight: bolder;
+}
 /*=============== friends section ============================= */
 .friends-section {
   flex: 1;
@@ -184,4 +212,57 @@
   background-color: var(--bg-app);
   padding: 10px;
   color: var(--white);
+}
+
+/*=============== chat section ============================= */
+
+.message-item {
+  height: fit-content;
+  width: 90%;
+  background-color: #444;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+}
+.message-shape {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  background-color: #444;
+  background-color: #aaa;
+  height: 11px;
+  width: 10px;
+  transform: rotate(45deg);
+  z-index: 100;
+}
+.message-shape.message-shape-me {
+  left: auto;
+  right: 0px;
+  background-color: #000;
+}
+
+.message-message {
+  position: relative;
+  background-color: #aaa;
+  color: #fff;
+  left: 5px;
+  top: 0;
+  height: 100%;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  min-width: 50px;
+  min-height: 20px;
+  border-end-end-radius: 3px;
+  border-end-start-radius: 3px;
+  border-start-end-radius: 3px;
+  padding: 5px;
+}
+.message-message.message-message-me {
+  background-color: #000;
+  left: 100%;
+  transform: translateX(calc(-100% - 5px));
+  right: 0px;
+  border-start-start-radius: 3px;
+  border-end-start-radius: 3px;
+  border-start-end-radius: 3px;
 }

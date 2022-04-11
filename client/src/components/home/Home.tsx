@@ -3,13 +3,25 @@ import MichiItem from "../MichiItem";
 import Profile from "../Profile";
 
 function Home() {
+  const [isOpenMenuItem, setIsOpenMenuItem] = React.useState(false);
+
+  const handleOpenMenuItem = (id?: string) => {
+    setIsOpenMenuItem(!isOpenMenuItem);
+  };
   return (
     <div className="App-section">
       <div className="profile-section">
         <Profile />
       </div>
       <div className="michis-section overflow-auto">
-        <MichiItem />
+        <MichiItem
+          openMenu={isOpenMenuItem}
+          openMenuHandle={handleOpenMenuItem}
+        />
+        <MichiItem
+          openMenu={isOpenMenuItem}
+          openMenuHandle={handleOpenMenuItem}
+        />
         <MichiItem />
         <MichiItem />
         <MichiItem />

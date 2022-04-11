@@ -14,10 +14,10 @@ function Header() {
         <div className="nav-icon">
           <HiPlusSm size={40} />
         </div>
-        <div className="nav-icon">
+        <Link to={"/chat"} className="nav-icon">
           <BiMessageRounded size={40} />
           <span className="number-not">49</span>
-        </div>
+        </Link>
         <div className="nav-icon">
           <span className="number-not">10</span>
 
