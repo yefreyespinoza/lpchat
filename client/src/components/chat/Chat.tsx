@@ -1,6 +1,7 @@
 import React from "react";
 import FriendItem from "../FriendItem";
 import Message from "./Message";
+import "./Chat.css";
 function Chat() {
   return (
     <div className="App-section">
@@ -57,6 +58,7 @@ function Chat() {
         <Message />
         <Message />
         <Message />
+        <div className="message-textarea"></div>
       </div>
     </div>
   );

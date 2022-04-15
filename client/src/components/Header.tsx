@@ -23,9 +23,9 @@ function Header() {
 
           <IoNotificationsOutline size={40} />
         </div>
-        <div className="nav-icon">
+        <Link to={"/p/username"} className="nav-icon">
           <CgProfile size={40} />
-        </div>
+        </Link>
       </div>
     </header>
   );

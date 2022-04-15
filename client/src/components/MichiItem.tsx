@@ -17,17 +17,26 @@ function MichiItem(props: GameItemI) {
         <div className="michi-item-user">
           <span>username1</span>
         </div>
-        <div className="michi-item-state">
-          <span>WIN</span>
+        <div className="michi-item-vs">
+          <span>VS</span>
         </div>
         <div className="michi-item-user">
           <span>username2</span>
         </div>
       </div>
       <div className="michi-item-options">
-        <Link to={"/game"} className="michi-item-go">
-          <span>go</span>
-        </Link>
+        <div>
+          <div className="michi-table-name">
+            <span>TableName</span>
+          </div>
+          <div className="michi-item-win">
+            <span>WIN</span>
+          </div>
+          <Link to={"/game"} className="michi-item-go">
+            <span>go</span>
+          </Link>
+        </div>
+
         <div className="michi-items-icon" onClick={props.openMenuHandle}>
           <BsThreeDotsVertical size={40} />
         </div>

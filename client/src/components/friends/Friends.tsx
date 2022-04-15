@@ -1,11 +1,11 @@
 import React from "react";
-import Profile from "../Profile";
 import FriendItem from "../FriendItem";
+import ProfileGame from "../profile/ProfileGame";
 function Friends() {
   return (
     <div className="App-section">
       <div className="profile-section">
-        <Profile />
+        <ProfileGame />
       </div>
       <div className="friends-section overflow-auto">
         <FriendItem />

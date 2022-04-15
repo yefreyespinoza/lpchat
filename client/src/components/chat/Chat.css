@@ -1,0 +1,8 @@
+.message-textarea {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #0000;
+  z-index: 1000;
+}
