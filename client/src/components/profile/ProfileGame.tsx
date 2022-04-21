@@ -13,9 +13,6 @@ function ProfileGame() {
             <span>username</span>
           </div>
           <div className="profile-user-info-links">
-            <Link className="link-profile" to={"/history"}>
-              historial
-            </Link>
             <Link className="link-profile" to={"/friends"}>
               Friends
             </Link>

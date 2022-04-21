@@ -11,3 +11,7 @@ export interface MessagePropsI {
   isMe?: boolean;
   text?: string;
 }
+
+export interface GameConfigUserPropsI {
+  isUserFriend?: boolean;
+}

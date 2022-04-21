@@ -1,5 +1,5 @@
 import React from "react";
-import FriendItem from "../FriendItem";
+import FriendItem from "./FriendItem";
 import ProfileGame from "../profile/ProfileGame";
 function Friends() {
   return (

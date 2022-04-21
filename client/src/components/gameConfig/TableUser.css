@@ -1,0 +1,23 @@
+.g-c-table-user-item {
+  width: 95%;
+  margin: 10px auto;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+.g-c-table-user-item span {
+  color: #bff;
+  font-weight: bolder;
+}
+.g-c-table-user-item button {
+  background-color: #000;
+  border: none;
+  color: #7ff;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+}

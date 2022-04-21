@@ -1,0 +1,56 @@
+/* friends item  */
+
+.friend-item {
+  position: relative;
+  width: 90%;
+  height: min-content;
+  border-bottom: 2px solid #000;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px;
+}
+
+/* avatar  */
+#friend-item__avatar {
+  position: relative;
+  display: flex;
+  width: 60px;
+}
+
+#f-i-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+/* info  */
+
+#friend-item__info {
+  color: var(--white);
+  padding: 5px;
+}
+#friend-item__info > span {
+  color: #7ff;
+  cursor: pointer;
+  border-bottom: 1px solid #477;
+}
+
+/* icon chat */
+#friend-item__icon-chat {
+  position: relative;
+  width: 70px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+#friend-item__icon-chat > svg {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  color: var(--white);
+}

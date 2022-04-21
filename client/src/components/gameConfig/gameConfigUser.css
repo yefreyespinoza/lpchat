@@ -1,0 +1,46 @@
+.game-config-user-container {
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+/* username  */
+.game-config-user-username-div {
+  height: 35px;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+}
+.g-c-u-u {
+  color: #fdf;
+  font-weight: bolder;
+  margin-left: 10px;
+  flex: 1;
+}
+.g-c-u-b {
+  background-color: #0000;
+  border: none;
+  outline: none;
+  color: #fdf;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* statistics  */
+
+.game-config-user-statistics-div {
+  height: 100px;
+  border: 1px solid #aaa;
+  position: relative;
+}
+.game-config-user-statistics {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  background-color: #000;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { MessagePropsI } from "../../types/types";
-
+import "./Message.css";
 function Message(props: MessagePropsI) {
   return (
     <div className={props.isMe ? "message-item" : "message-item"}>

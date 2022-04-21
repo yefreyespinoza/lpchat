@@ -1,0 +1,106 @@
+.game-config {
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+.game-config-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.game-config-users {
+  flex: 0.5;
+  height: 100%;
+  background-color: #222;
+  display: none;
+}
+
+.game-config-game {
+  flex: 1;
+  height: 100%;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* components  */
+/* table header  */
+.g-c-table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.g-c-table-header span {
+  color: #dff;
+  font-weight: bold;
+}
+
+/* table config  */
+.g-c-table-config {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+  margin: 0 auto;
+  height: fit-content;
+}
+.g-c-t-c-group {
+  display: flex;
+}
+.g-c-t-c-group span {
+  white-space: nowrap;
+  margin-right: 10px;
+  color: #599;
+  font-weight: bold;
+}
+.g-c-t-c-group input {
+  width: 100%;
+  border: 1px solid #599;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  color: #fdf;
+  padding: 5px;
+}
+.g-c-t-c-group input::placeholder {
+  color: #aaa;
+}
+
+.g-c-t-c-link {
+  display: flex;
+  margin-top: 10px;
+}
+.g-c-t-c-link span {
+  color: #599;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+.g-c-t-c-link a {
+  color: #7ff;
+  font-weight: bolder;
+  text-decoration: none;
+  border-bottom: 1px solid #499;
+}
+.g-c-t-c-button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #000;
+  color: #7ff;
+  font-weight: bolder;
+  cursor: pointer;
+}
+/* table users  */
+
+.g-c-table-users {
+  flex: 1;
+  width: 95%;
+  overflow: auto;
+  margin: 0 auto;
+  border: 1px solid #000;
+}

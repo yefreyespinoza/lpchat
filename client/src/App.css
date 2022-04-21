@@ -1,6 +1,5 @@
 .App {
   background-color: #222;
-  height: 100vh;
 }
 :root {
   --title-color: #fff;
@@ -37,15 +36,22 @@ a {
 
 .App-header {
   background-color: var(--bg-app);
-  border-bottom: 0.5px solid #444;
   height: 60px;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+  width: 100%;
+}
+.header {
   display: flex;
+  border-bottom: 0.5px solid #444;
+  width: 100%;
+  height: 60px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: calc(10px + 2vmin);
 }
-
 .header-logo {
   margin-left: 50px;
   cursor: pointer;
@@ -211,7 +217,7 @@ a {
 .profile-user-game-statics {
   margin: auto;
   width: var(--width-mobile);
-  border: 1px solid red;
+  border: 1px solid #7aa;
   height: 200px;
   margin-top: 20px;
 }
@@ -329,72 +335,4 @@ a {
 .friends-section {
   flex: 1;
   background-color: #444;
-}
-
-/* friends item  */
-
-.friend-item {
-  width: 90%;
-  border-radius: 10px;
-  border: 1px solid red;
-  margin: 30px auto;
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  background-color: var(--bg-app);
-  padding: 10px;
-  color: var(--white);
-}
-
-/*=============== chat section ============================= */
-
-.message-item {
-  height: fit-content;
-  width: 90%;
-  background-color: #444;
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto;
-}
-.message-shape {
-  position: absolute;
-  top: -10px;
-  left: 0px;
-  background-color: #444;
-  background-color: #aaa;
-  height: 11px;
-  width: 10px;
-  transform: rotate(45deg);
-  z-index: 100;
-}
-.message-shape.message-shape-me {
-  left: auto;
-  right: 0px;
-  background-color: #000;
-}
-
-.message-message {
-  position: relative;
-  background-color: #aaa;
-  color: #fff;
-  left: 5px;
-  top: 0;
-  height: 100%;
-  width: fit-content;
-  max-width: calc(100% - 20px);
-  min-width: 50px;
-  min-height: 20px;
-  border-end-end-radius: 3px;
-  border-end-start-radius: 3px;
-  border-start-end-radius: 3px;
-  padding: 5px;
-}
-.message-message.message-message-me {
-  background-color: #000;
-  left: 100%;
-  transform: translateX(calc(-100% - 5px));
-  right: 0px;
-  border-start-start-radius: 3px;
-  border-end-start-radius: 3px;
-  border-start-end-radius: 3px;
 }

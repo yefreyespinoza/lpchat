@@ -25,14 +25,7 @@ function Profile() {
             </div>
             <div className="profile-user-info-links">
               {isConfig ? (
-                <span className="link-profile-span">historial</span>
-              ) : (
-                <Link className="link-profile" to={"/history"}>
-                  historial
-                </Link>
-              )}
-              {isConfig ? (
-                <span className="link-profile-span">friends</span>
+                <span className="link-profile-span">Friends</span>
               ) : (
                 <Link className="link-profile" to={"/friends"}>
                   Friends
