@@ -5,7 +5,7 @@ import Friends from "../components/friends/Friends";
 import Game from "../components/game/Game";
 import GameConfig from "../components/gameConfig/gameConfig";
 import Profile from "../components/profile/Profile";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 const Router = () => {
   return (
     <div>

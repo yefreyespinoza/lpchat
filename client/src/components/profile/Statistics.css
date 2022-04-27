@@ -1,0 +1,13 @@
+#profile-statistics {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+#profile-statistics svg {
+  position: absolute;
+  border: 1px solid #77aaaa;
+  width: 100%;
+  height: 100px;
+}

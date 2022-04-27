@@ -1,18 +1,11 @@
 import React from "react";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { AiOutlineSetting } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { GameItemI } from "../types/types";
+import { GameItemI } from "../../types/types";
+
 function MichiItem(props: GameItemI) {
   return (
     <div className="michi-item">
-      {props.openMenu && (
-        <div className="michi-options-menu">
-          <Link to={"/game"}>go</Link>
-          <Link to={"/game-config"}>config</Link>
-          <span>delete</span>
-        </div>
-      )}
-
       <div className="michi-item-users">
         <div className="michi-item-user">
           <span>username1</span>
@@ -23,6 +16,13 @@ function MichiItem(props: GameItemI) {
         <div className="michi-item-user">
           <span>username2</span>
         </div>
+        <Link
+          to="/game-config"
+          id="icons_otuline_setting"
+          onClick={props.openMenuHandle}
+        >
+          <AiOutlineSetting size={30} />
+        </Link>
       </div>
       <div className="michi-item-options">
         <div>
@@ -35,10 +35,6 @@ function MichiItem(props: GameItemI) {
           <Link to={"/game"} className="michi-item-go">
             <span>go</span>
           </Link>
-        </div>
-
-        <div className="michi-items-icon" onClick={props.openMenuHandle}>
-          <BsThreeDotsVertical size={40} />
         </div>
       </div>
     </div>

@@ -1,0 +1,161 @@
+.App {
+  background-color: #222;
+}
+:root {
+  --title-color: #fff;
+  --white: #fff;
+  --bg-app: #282c34;
+  --border: 1px solid #fff;
+  --width-desktop: 50%;
+  --width-mobile: 95%;
+  --desktop-screen: 1200px;
+  --laptop-screen: 900px;
+  --tablet-screen: 768px;
+  --mobile-screen: 600px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* backgrounds color  */
+.bg-red {
+  background-color: #f00;
+}
+.bg-black {
+  background-color: #000;
+}
+
+/* text colors  */
+.red {
+  color: #f00;
+}
+.white {
+  color: #fff;
+}
+.black {
+  color: #fff;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* header  */
+
+.App-header {
+  background-color: var(--bg-app);
+  height: 60px;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 0.5px solid #444;
+}
+
+.header {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+.header-logo {
+  cursor: pointer;
+}
+.header-logo a {
+  text-decoration: none;
+  color: #faf;
+  font-weight: bolder;
+}
+.header-nav {
+  display: flex;
+}
+.nav-icon {
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+}
+.number-not {
+  position: absolute;
+  color: #faf;
+  font-size: 15px;
+  right: -8px;
+  top: -7px;
+  font-weight: bold;
+}
+
+/* main  */
+.main {
+  display: flex;
+  height: calc(100vh - 60px);
+  padding: 0 20px;
+  width: 100%;
+  margin: auto;
+}
+
+/* main-left  */
+.main-left {
+  flex: 0.5;
+  height: calc(100vh - 60px);
+}
+.main-left-hidden {
+  display: none;
+}
+/*main right */
+.main-right {
+  flex: 1;
+  height: calc(100vh - 60px);
+}
+
+/* media querys  */
+
+/* header media querys  */
+@media (min-width: 750px) {
+  .header,
+  .main {
+    width: 90%;
+  }
+}
+@media (min-width: 900px) {
+  .header,
+  .main {
+    width: 80%;
+  }
+  .main-left-hidden {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header,
+  .main {
+    width: 60%;
+  }
+}

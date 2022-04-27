@@ -14,6 +14,11 @@
 .conversation-item:hover {
   background-color: #5995;
 }
+
+.conversation-item:hover #conversation-item__chat-icon-svg {
+  display: block;
+}
+
 #conversation-item__avatar {
   width: 60px;
   display: flex;
@@ -33,6 +38,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 #conversation-item__chat-info_username {
   width: 100%;
   display: flex;
@@ -42,17 +48,21 @@
 #conversation-item__chat-info_username span {
   color: #7ff;
 }
+
 #conversation-item__chat-icon {
   position: relative;
   width: 40px;
-  display: flex;
+  display: block;
   cursor: pointer;
   cursor: pointer;
 }
-#conversation-item__chat-icon > svg {
-  font-size: 20px;
-  margin: 0 auto;
+#conversation-item__chat-icon-svg {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  display: none;
 }
-#conversation-item__chat-icon > svg:hover {
+#conversation-item__chat-icon-svg > svg {
   font-size: 25px;
+  margin: 0 auto;
 }

@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { AiFillSave } from "react-icons/ai";
+import "./Profile.css";
+import Statistics from "./Statistics";
 function Profile() {
   let isConfig = window.location.pathname === "/profile-config";
   console.log(isConfig);
 
   return (
-    <div className="profile-section-component">
-      <div className="profile">
+    <div className="main">
+      <div className="main-right profile overflow-y-auto">
         <div className="profile-user">
           <div className="profile-user-avatar">
             <img src="https://i.pravatar.cc/300" alt="avatar" />
@@ -63,23 +65,24 @@ function Profile() {
             </div>
           </Link>
         </div>
-      </div>
-      <div className="profile-user-game-info">
-        <div className="profile-user-game-info-1">
-          <span>partidas jugadas</span> <span>190</span>
-        </div>
-        <div className="profile-user-game-info-2">
-          <div>
-            <span>partidas ganadas</span>
-            <span>50</span>
+
+        <div className="profile-user-game-info">
+          <div className="profile-user-game-info-1">
+            <span>partidas jugadas</span> <span>190</span>
           </div>
-          <div>
-            <span>partidas perdidas</span>
-            <span>50</span>
+          <div className="profile-user-game-info-2">
+            <div>
+              <span>partidas ganadas</span>
+              <span>50</span>
+            </div>
+            <div>
+              <span>partidas perdidas</span>
+              <span>50</span>
+            </div>
           </div>
         </div>
+        <Statistics />
       </div>
-      <div className="profile-user-game-statics"></div>
     </div>
   );
 }

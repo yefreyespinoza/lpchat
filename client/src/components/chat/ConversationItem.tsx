@@ -15,7 +15,9 @@ function ConversationItem() {
         <span>today 3:30 pm</span>
       </div>
       <div id="conversation-item__chat-icon">
-        <GoChevronDown color="#fdf" />
+        <div id="conversation-item__chat-icon-svg">
+          <GoChevronDown color="#fdf" />
+        </div>
       </div>
     </div>
   );

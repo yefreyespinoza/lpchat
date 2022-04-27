@@ -1,7 +1,7 @@
 import React from "react";
-import MichiItem from "../MichiItem";
+import MichiItem from "./MichiItem";
 import ProfileGame from "../profile/ProfileGame";
-
+import "./Home.css";
 function Home() {
   const [isOpenMenuItem, setIsOpenMenuItem] = React.useState(false);
 
@@ -9,11 +9,11 @@ function Home() {
     setIsOpenMenuItem(!isOpenMenuItem);
   };
   return (
-    <div className="App-section">
-      <div className="profile-section">
+    <div className="main">
+      <div className="main-left main-left-hidden overflow-y-auto">
         <ProfileGame />
       </div>
-      <div className="michis-section overflow-auto">
+      <div className="main-right overflow-auto">
         <MichiItem
           openMenu={isOpenMenuItem}
           openMenuHandle={handleOpenMenuItem}

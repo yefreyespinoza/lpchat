@@ -1,0 +1,97 @@
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.profile-user {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: min-content;
+  width: 100%;
+  margin-top: 20px;
+}
+.profile-user-info {
+  position: relative;
+  height: 100px;
+  color: #fff;
+}
+.link-profile-span {
+  color: #fdf;
+  margin-right: 10px;
+  cursor: default;
+}
+.profile-user-info-username {
+  color: #7cc;
+}
+.profile-user-config {
+  width: 30px;
+  height: 100px;
+}
+.profile-user-config-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.profile-user-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #000;
+}
+.link-profile {
+  color: #fdf;
+  margin-right: 10px;
+  border-bottom: 1px solid #faf;
+  cursor: pointer;
+}
+.input-profile-user-config {
+  background-color: #0000;
+  color: #7cc;
+  border: 1px solid #faf;
+  border-radius: 2px;
+  outline: none;
+}
+/* profile config  */
+.text-area-profile-config {
+  margin-top: 10px;
+  min-height: 50px;
+  width: 100%;
+  max-height: 100px;
+  background-color: #0000;
+  color: #fdf;
+  border: 1px solid #faf;
+  border-radius: 2px;
+  outline: none;
+}
+.text-area-profile-config::-webkit-scrollbar {
+  display: none;
+}
+
+/* profile section games  */
+.profile-user-game-info {
+  height: min-content;
+  min-height: 100px;
+  color: #fdf;
+  margin-top: 20px;
+  width: var(--width-mobile);
+}
+.profile-user-game-info-1 > span {
+  margin: 5px;
+  color: #6ff;
+}
+.profile-user-game-info-2 {
+  display: flex;
+}
+.profile-user-game-info-2 > div {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+/* profile media querys    */

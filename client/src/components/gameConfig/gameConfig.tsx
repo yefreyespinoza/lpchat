@@ -23,7 +23,10 @@ const TableConfig = () => {
         <span>Invitar</span>
         <a href="/">this is a link to other</a>
       </div>
-      <button className="g-c-t-c-button">save</button>
+      <div id="buttons-g-c-container">
+        <button className="g-c-t-c-button bg-red">delete</button>
+        <button className="g-c-t-c-button bg-black white">save</button>
+      </div>
     </div>
   );
 };
