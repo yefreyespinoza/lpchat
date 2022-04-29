@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ProfileGame.css";
+import Statistics from "./Statistics";
 function ProfileGame() {
   return (
     <div className="profile-game">
@@ -34,16 +35,16 @@ function ProfileGame() {
         </div>
         <div className="profile-user-game-info-2">
           <div>
-            <span>partidas ganadas</span>
-            <span>50</span>
+            <span className="cyan">partidas ganadas</span>
+            <span className="cyan">50</span>
           </div>
           <div>
-            <span>partidas perdidas</span>
-            <span>50</span>
+            <span className="red">partidas perdidas</span>
+            <span className="red">50</span>
           </div>
         </div>
       </div>
-      <div className="profile-game-user-game-statics"></div>
+      <Statistics />
     </div>
   );
 }

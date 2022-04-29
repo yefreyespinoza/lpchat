@@ -9,7 +9,7 @@ function Home() {
     setIsOpenMenuItem(!isOpenMenuItem);
   };
   return (
-    <div className="main">
+    <div className="main p-h-mobile">
       <div className="main-left main-left-hidden overflow-y-auto">
         <ProfileGame />
       </div>

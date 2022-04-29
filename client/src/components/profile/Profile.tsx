@@ -3,12 +3,13 @@ import { FiSettings } from "react-icons/fi";
 import { AiFillSave } from "react-icons/ai";
 import "./Profile.css";
 import Statistics from "./Statistics";
+
 function Profile() {
   let isConfig = window.location.pathname === "/profile-config";
   console.log(isConfig);
 
   return (
-    <div className="main">
+    <div className="main p-h-mobile">
       <div className="main-right profile overflow-y-auto">
         <div className="profile-user">
           <div className="profile-user-avatar">
@@ -72,12 +73,12 @@ function Profile() {
           </div>
           <div className="profile-user-game-info-2">
             <div>
-              <span>partidas ganadas</span>
-              <span>50</span>
+              <span className="cyan">partidas ganadas</span>
+              <span className="cyan">50</span>
             </div>
             <div>
-              <span>partidas perdidas</span>
-              <span>50</span>
+              <span className="red">partidas perdidas</span>
+              <span className="red">50</span>
             </div>
           </div>
         </div>

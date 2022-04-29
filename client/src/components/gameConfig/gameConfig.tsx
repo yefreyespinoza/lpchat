@@ -25,14 +25,14 @@ const TableConfig = () => {
       </div>
       <div id="buttons-g-c-container">
         <button className="g-c-t-c-button bg-red">delete</button>
-        <button className="g-c-t-c-button bg-black white">save</button>
+        <button className="g-c-t-c-button bg-darkcyan white">save</button>
       </div>
     </div>
   );
 };
 const TableUsers = () => {
   return (
-    <div className="g-c-table-users">
+    <div className="g-c-table-users overflow-y-auto">
       <TableUser />
       <TableUser />
       <TableUser />
@@ -54,7 +54,7 @@ const TableUsers = () => {
 };
 function GameConfig() {
   return (
-    <div className="game-config">
+    <div className="main">
       <div className="game-config-container">
         <div className="game-config-users">
           <GameConfigUser />

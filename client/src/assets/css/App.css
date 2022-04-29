@@ -38,16 +38,25 @@ a {
 .bg-black {
   background-color: #000;
 }
+.bg-darkcyan {
+  background-color: #008b8b;
+}
 
 /* text colors  */
 .red {
-  color: #f00;
+  color: #f77;
 }
 .white {
   color: #fff;
 }
 .black {
   color: #fff;
+}
+.cyan {
+  color: #5ff;
+}
+.darkcyan {
+  color: #008b8b;
 }
 
 .overflow-auto {
@@ -115,7 +124,6 @@ a {
 .main {
   display: flex;
   height: calc(100vh - 60px);
-  padding: 0 20px;
   width: 100%;
   margin: auto;
 }
@@ -134,6 +142,20 @@ a {
   height: calc(100vh - 60px);
 }
 
+/*paddings */
+
+.p-h-mobile {
+  padding: 0 10px;
+}
+
+/*positions */
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
 /* media querys  */
 
 /* header media querys  */
@@ -147,6 +169,9 @@ a {
   .header,
   .main {
     width: 80%;
+  }
+  .p-h-mobile {
+    padding: 0;
   }
   .main-left-hidden {
     display: block;

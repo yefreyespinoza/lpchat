@@ -1,15 +1,17 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import "./game.css";
 import MessageInput from "../chat/MessageInput";
+import { AiOutlineDoubleRight } from "react-icons/ai";
+import { RiChat1Fill } from "react-icons/ri";
 import Message from "../chat/Message";
 function CirclePice({ color }: { color: string }) {
   return (
     <span className="circle-piece" style={{ backgroundColor: color }}></span>
   );
 }
-function GameBox({ gameBoxDiv, divX }: { gameBoxDiv: any; divX: any }) {
+function GameBox() {
   return (
-    <div ref={gameBoxDiv} className="game-box" style={{ height: divX }}>
+    <div className="game-box" style={{ height: "390px" }}>
       <div className="piece-item">
         <div className="piece-item-circle-pink piece-item-circle"></div>
       </div>
@@ -40,31 +42,38 @@ function GameBox({ gameBoxDiv, divX }: { gameBoxDiv: any; divX: any }) {
     </div>
   );
 }
-
-function useWindowSize(ref: any) {
-  const [size, setSize] = useState([0, 0, 0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      if (ref.current !== null) {
-        const { current } = ref;
-        const boundingRect = current.getBoundingClientRect();
-        const { width, height } = boundingRect;
-        setSize([window.innerWidth, window.innerHeight, width, height]);
-      }
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, [ref]);
-  return size;
+function ToggleChatGame({
+  isChatOpen,
+  onClick,
+}: {
+  isChatOpen?: boolean;
+  onClick?: any;
+}) {
+  return (
+    <div id="toggle-chat-game" onClick={onClick}>
+      {/* <AiOutlineDoubleRight /> */}
+      {!isChatOpen ? <RiChat1Fill /> : <AiOutlineDoubleRight />}
+    </div>
+  );
 }
 
 function Game() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const toggleChatOpen = () => setIsChatOpen(!isChatOpen);
   let gameBoxDiv = React.useRef<any>(null);
-  const divSize = useWindowSize(gameBoxDiv);
   return (
-    <div className="game">
-      <div className="game-chat">
+    <div className="game main relative">
+      <ToggleChatGame
+        isChatOpen={isChatOpen}
+        onClick={() => {
+          toggleChatOpen();
+        }}
+      />
+      <div
+        className={
+          !isChatOpen ? "game-chat game-left" : "game-chat game-left-open"
+        }
+      >
         <div className="game-chat-table-chat">
           <span>table name</span>
         </div>
@@ -96,7 +105,13 @@ function Game() {
         </div>
         <MessageInput />
       </div>
-      <div className="game-container">
+      <div
+        className={
+          !isChatOpen
+            ? "game-container game-right"
+            : "game-container game-right-close"
+        }
+      >
         <div className="game-canvas">
           <div className="bottom-game-none">
             <CirclePice color="#000" />
@@ -105,7 +120,7 @@ function Game() {
           </div>
 
           <div className="game-container-game">
-            <GameBox gameBoxDiv={gameBoxDiv} divX={divSize[2]} />
+            <GameBox />
           </div>
           <div className="top-game-users">
             <span>username1</span>

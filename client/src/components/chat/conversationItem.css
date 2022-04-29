@@ -1,12 +1,11 @@
 .conversation-item {
-  border-bottom: 1px solid #000;
+  border-bottom: 0.5px solid #fdf;
   background-color: transparent;
   display: flex;
   cursor: pointer;
   align-items: stretch;
   padding: 10px 5px;
   color: var(--white);
-  border-radius: 5px;
   cursor: pointer;
   margin: 20px 0;
 }
@@ -28,6 +27,7 @@
 #conversation-item__avatar > div {
   width: 50px;
   height: 50px;
+  border: 1px solid #fdf;
   border-radius: 50%;
   background-color: #000;
 }

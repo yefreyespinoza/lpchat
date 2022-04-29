@@ -1,8 +1,39 @@
 /*=============== chat section ============================= */
-.chat-section-app {
-  display: flex;
-  width: 100%;
-  height: calc(100vh - 60px);
+
+/*left chat **/
+.left-chat {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.left-chat-close {
+  flex: 0;
+}
+
+.right-chat {
+  flex: 0;
+  display: none;
+}
+.right-chat-open {
+  flex: 1;
+  display: block;
+}
+
+@media screen and (min-width: 900px) {
+  .left-chat {
+    flex: 0.5;
+    padding: 0;
+  }
+  .right-chat {
+    display: block;
+    flex: 1;
+  }
+  .left-chat-close {
+    flex: 0.5;
+  }
+  .right-chat-close {
+    flex: 1;
+  }
 }
 
 .chat-profile-section {
@@ -22,21 +53,21 @@
 .chat-section {
   display: block;
   position: relative;
-  width: 70%;
 }
 
 .messages-container {
+  width: 100%;
   padding: 0 10px;
   display: block;
   position: relative;
   height: calc(100vh - 120px);
   padding-bottom: 50px;
-  background-color: #444;
 }
 
 /* components  */
 .chat-open {
   width: 100%;
+  background-color: #3334;
   height: calc(100vh - 60px);
   display: flex;
   align-items: center;

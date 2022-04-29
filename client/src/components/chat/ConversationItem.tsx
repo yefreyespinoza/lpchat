@@ -1,9 +1,9 @@
 import React from "react";
 import "./conversationItem.css";
 import { GoChevronDown } from "react-icons/go";
-function ConversationItem() {
+function ConversationItem({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="conversation-item">
+    <div className="conversation-item" onClick={onClick}>
       <div id="conversation-item__avatar">
         <div></div>
       </div>
