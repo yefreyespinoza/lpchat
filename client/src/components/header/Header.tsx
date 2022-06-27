@@ -10,7 +10,7 @@ function Header() {
       <header className="header">
         <div className="header-logo">
           {/* ruleta, casino, etc */}
-          <Link to={"/"}>Friends Club</Link>
+          <Link to={"/app"}>Michi Game</Link>
         </div>
         <div className="header-nav">
           <div className="nav-icon">

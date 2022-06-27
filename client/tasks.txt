@@ -1,0 +1,14 @@
+[x] start project
+
+routes
+/ => landing page
+/login page
+/register page 
+/home => lobby page (if not logged in) : go to login page.
+/* => page not found.
+/login* => go to login page 
+/register => got to register page 
+/register* => go to register page
+
+this is real project for create games and social media app like discord, but with games and social media, etc, etc, etc.
+

@@ -1,12 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { AiFillSave } from "react-icons/ai";
 import "./Profile.css";
 import Statistics from "./Statistics";
+import Cookies from "universal-cookie";
+import { removeToken } from "../../context/AppActions";
+import { useContext } from "react";
+import AppContext from "../../context/AppContext";
 
 function Profile() {
-  let isConfig = window.location.pathname === "/profile-config";
-  console.log(isConfig);
+  const { dispatch } = useContext(AppContext);
+  const navigate = useNavigate();
+  const cookies = new Cookies();
+  const isConfig = window.location.pathname === "/profile-config";
+  const logoutUser = () => {
+    cookies.remove("auth");
+    removeToken(dispatch);
+    navigate("/");
+  };
 
   return (
     <div className="main p-h-mobile">
@@ -83,6 +94,11 @@ function Profile() {
           </div>
         </div>
         <Statistics />
+
+        {/* logout  */}
+        <div>
+          <button onClick={logoutUser}>logout</button>
+        </div>
       </div>
     </div>
   );

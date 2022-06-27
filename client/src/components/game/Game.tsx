@@ -11,7 +11,7 @@ function CirclePice({ color }: { color: string }) {
 }
 function GameBox() {
   return (
-    <div className="game-box" style={{ height: "390px" }}>
+    <div className="game-box">
       <div className="piece-item">
         <div className="piece-item-circle-pink piece-item-circle"></div>
       </div>
@@ -60,7 +60,6 @@ function ToggleChatGame({
 function Game() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const toggleChatOpen = () => setIsChatOpen(!isChatOpen);
-  let gameBoxDiv = React.useRef<any>(null);
   return (
     <div className="game main relative">
       <ToggleChatGame

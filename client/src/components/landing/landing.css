@@ -1,0 +1,15 @@
+#michi-title {
+  color: #def;
+  font-size: 100px;
+  font-weight: bold;
+  font-style: italic;
+}
+.landing_text {
+  color: #abc;
+}
+.container_landing_michi {
+  border: 1px solid #def;
+  background-color: #345;
+  width: 500px;
+  height: 500px;
+}

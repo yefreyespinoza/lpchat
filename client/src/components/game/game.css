@@ -71,8 +71,8 @@
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #444;
+  justify-content: space-between;
+  background-color: #234;
 }
 
 .top-game-users {
@@ -99,7 +99,6 @@
   position: relative;
   width: 100%;
   border: 1px solild red;
-  background: #555;
 }
 
 .bottom-game-none {
@@ -114,28 +113,19 @@
   margin: 0 10px;
 }
 
-@media screen and (min-width: 900px) {
-  .game-container {
-    border-left: 1px solid #999;
-  }
-  .game-chat {
-    display: block;
-  }
-  .game-canvas {
-    width: 60%;
-  }
-}
 .game-box {
   margin: auto;
-  background-color: #333;
-  width: 95%;
+  background-color: #89a;
+  width: 250px;
+  height: 250px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   display: grid;
 }
 @media screen and (min-width: 1100px) {
   .game-box {
-    width: 90%;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -149,7 +139,7 @@
 .piece-item-circle {
   border: 2px solid #599;
   border-radius: 50%;
-  background-color: #000;
+  background-color: #234;
   width: 90%;
   height: 90%;
 }
@@ -178,10 +168,15 @@
   position: fixed;
   bottom: 70px;
   right: 0;
-  background-color: #000;
+  background-color: #123;
+  border-top: 2px solid #89a;
+  border-left: 2px solid #89a;
+  border-bottom: 2px solid #89a;
   border-radius: 5px;
   width: 70px;
   z-index: 100;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 #toggle-chat-game svg {
@@ -189,8 +184,21 @@
   font-size: 40px;
 }
 
+/*media querys */
 @media screen and (min-width: 900px) {
   #toggle-chat-game {
     display: none;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .game-container {
+    border-left: 1px solid #123;
+  }
+  .game-chat {
+    display: block;
+  }
+  .game-canvas {
+    width: 60%;
   }
 }
