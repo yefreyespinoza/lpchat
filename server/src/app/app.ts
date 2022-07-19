@@ -5,6 +5,7 @@ import config from "../config/config";
 import { Server } from "socket.io";
 import userRoutes from "./router/user.router";
 import morgan from "morgan";
+import michiGameRouter from "./router/michiGame.router";
 const app = express();
 const corsOptions = {
   origin: config.origin,
@@ -16,7 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+//router
 app.use(userRoutes);
+app.use(michiGameRouter);
+
+//http server
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, { cors: { origin: config.origin } });

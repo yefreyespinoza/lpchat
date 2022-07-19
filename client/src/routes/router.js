@@ -92,6 +92,16 @@ const Router = () => {
           }
         />
         <Route
+          path="/new-table"
+          element={
+            isLoading ? null : isAuth ? (
+              <GameConfig />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route
           path="/game-config"
           element={
             isLoading ? null : isAuth ? (

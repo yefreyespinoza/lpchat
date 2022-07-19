@@ -31,7 +31,10 @@ export const registerUser: RequestHandler = (req, res, next) => {
 export const loginUser: RequestHandler = (req, res, next) => {
   try {
     passport.authenticate("login", (err, user, info) => {
-      if (err) return next(err);
+      if (err) {
+        res.status(302).json({ message: "username or password invalid" });
+        return next(err);
+      }
       if (!user)
         return res
           .status(501)
@@ -43,6 +46,7 @@ export const loginUser: RequestHandler = (req, res, next) => {
       });
     })(req, res, next);
   } catch (e) {
+    res.status(302).json({ message: "username or password invalid" });
     console.error(
       "[user.controller][loginUser][Error]",
       typeof e === "object" ? JSON.stringify(e) : e

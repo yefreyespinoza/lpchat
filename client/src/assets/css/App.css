@@ -41,6 +41,9 @@ a {
 .bg-darkcyan {
   background-color: #008b8b;
 }
+.bg-orange {
+  background-color: #ffa500;
+}
 
 /* text colors  */
 .red {

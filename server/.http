@@ -1,0 +1,26 @@
+@api = http://localhost:4000/api 
+@michigameapi = {{api}}/michi-game/
+
+### post michi game
+POST {{michigameapi}} HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "hostId": 1,
+    "culo": 48,
+    "gameName": "game name"
+}
+
+###get michi game by user id
+
+GET {{michigameapi}}byuser/100
+
+###delete michi game by id
+
+###update michi game by id
+
+###get michi game wiht usernames
+###michiGameRouter.get('/api/michi-game/withusernames/:gameId', getOneMichiGameUsernames)
+GET {{michigameapi}}withusernames/11 HTTP/1.1
+

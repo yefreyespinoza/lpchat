@@ -1,8 +1,9 @@
 import bcrypt from "bcryptjs";
 import { User } from "../types/User";
-import connection from "../../config/db";
+import { db } from "../../config/db";
 import { OkPacket, RowDataPacket } from "mysql2";
 
+//AUTH
 //function for encrypt user password
 export const encryptPassword = async (password: string) => {
   const salt = await bcrypt.genSalt(10);
@@ -31,20 +32,16 @@ export const createNewUser = async (
   const query = "INSERT INTO users (username, password) VALUES (?,?)";
 
   //execute SQL query
-  connection.query(
-    query,
-    [newUser.username, newUser.password],
-    (err, result) => {
-      if (err) return cb(err, null);
-      const insertId = (<OkPacket>result).insertId;
-      const newUser: User = {
-        id: insertId,
-        username: user.username,
-        password: "",
-      };
-      cb(null, newUser);
-    }
-  );
+  db.query(query, [newUser.username, newUser.password], (err, result) => {
+    if (err) return cb(err, null);
+    const insertId = (<OkPacket>result).insertId;
+    const newUser: User = {
+      id: insertId,
+      username: user.username,
+      password: "",
+    };
+    cb(null, newUser);
+  });
 };
 
 //find one user by id
@@ -55,7 +52,7 @@ export const findUserByUsername = (
   //query for find user by username
   const query = "SELECT * FROM users WHERE username = ?";
   //execute query
-  connection.query(query, username, (err, result) => {
+  db.query(query, username, (err, result) => {
     if (err) return cb(err, null);
     const row = (<RowDataPacket>result)[0];
     if (!row) return cb(new Error("user not found"), null);
@@ -67,3 +64,7 @@ export const findUserByUsername = (
     cb(null, user);
   });
 };
+
+//OTHER OPERATIONS
+
+const findUsernameByUserId = () => {};

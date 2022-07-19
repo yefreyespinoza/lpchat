@@ -13,9 +13,9 @@ function Header() {
           <Link to={"/app"}>Michi Game</Link>
         </div>
         <div className="header-nav">
-          <div className="nav-icon">
+          <Link to="/new-table" className="nav-icon">
             <HiPlusSm size={40} />
-          </div>
+          </Link>
           <div className="nav-icon">
             <FiSearch size={40} />
           </div>
