@@ -17,3 +17,9 @@
 ### create algoritm for play game on backend
 
 ### send sockets biredictional.
+
+## documentation for server routes.
+
+<ol>
+    <li>create documentation with swagger.</li>
+</ol>

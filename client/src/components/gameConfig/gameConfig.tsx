@@ -1,7 +1,10 @@
 import GameConfigUser from "./GameConfigUser";
 import "./gameConfig.css";
 import TableUser from "./TableUser";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createNewGameTable } from "./../../api/game";
+import { NewMichiGame } from "./../../types/game";
+import { ChangeEvent, useState } from "react";
 
 const TableHeader = () => {
   return (
@@ -13,11 +16,36 @@ const TableHeader = () => {
 };
 
 const TableConfig = ({ isNew }: { isNew: boolean }) => {
+  const navigate = useNavigate();
+  const [gameState, setGameState] = useState<NewMichiGame>({
+    gameName: "",
+    hostId: 0,
+  });
+  const createNewMichiGameTable = async () => {
+    if (gameState.gameName.trim()) {
+      const res = await createNewGameTable(gameState, "");
+      if (res.status === 200) return navigate("/app");
+      return console.log("error creating game");
+    } else {
+      console.log("add any name for your michi game table");
+    }
+  };
+  const changeMichiGameName = (e: ChangeEvent<HTMLInputElement>) => {
+    setGameState({ ...gameState, gameName: e.target.value });
+  };
+  const saveMichiGameAction = () => {
+    if (isNew) return createNewMichiGameTable();
+    return console.log("update michi game table");
+  };
   return (
     <div className="g-c-table-config">
       <div className="g-c-t-c-group">
         <span>Table Name</span>
-        <input type="text" placeholder="table name" />
+        <input
+          onChange={changeMichiGameName}
+          type="text"
+          placeholder="table name"
+        />
       </div>
       {!isNew ? (
         <div className="g-c-t-c-link">
@@ -33,8 +61,12 @@ const TableConfig = ({ isNew }: { isNew: boolean }) => {
         ) : (
           <button className={"g-c-t-c-button bg-red"}>delete</button>
         )}
-
-        <button className="g-c-t-c-button bg-darkcyan white">save</button>
+        <button
+          onClick={saveMichiGameAction}
+          className="g-c-t-c-button bg-darkcyan white"
+        >
+          save
+        </button>
       </div>
     </div>
   );
@@ -63,7 +95,7 @@ const TableUsers = () => {
 };
 function GameConfig() {
   const isNew = window.location.pathname === "/new-table";
-  console.log(isNew);
+
   return (
     <div className="main">
       <div className="game-config-container">

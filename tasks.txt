@@ -12,3 +12,6 @@ routes
 
 this is real project for create games and social media app like discord, but with games and social media, etc, etc, etc.
 
+[x] create a michi_game.
+[ ] get michi games by UserId.
+[ ] create documentation for server routes. with swagger.

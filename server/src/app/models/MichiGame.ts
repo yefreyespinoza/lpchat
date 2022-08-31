@@ -16,6 +16,7 @@ export const createNewMichiGame = (
   game: MichiGameStart,
   cb: (err: Error | null, michiGame: MichiGameI | null) => void
 ) => {
+  console.log(game);
   const startGame: MichiGameSave = {
     users: [game.hostId, 0],
     gameName: game.gameName,
