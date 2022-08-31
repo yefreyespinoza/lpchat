@@ -1,3 +1,5 @@
+<h1 style="color: red">this is a server for lpchat social media project</h1>
+
 ### login ---- x.
 
 ### register. ---- x.
@@ -20,6 +22,6 @@
 
 ## documentation for server routes.
 
-<ol>
+<ul>
     <li>create documentation with swagger.</li>
-</ol>
+</ul>
