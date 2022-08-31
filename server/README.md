@@ -1,7 +1,5 @@
 <h1 style="color: red;">this is a server for lpchat social media project</h1>
 
-<h3> login ---- </h3>
-
 <h4> 
 modules i use.</h4>
 <ul> 
