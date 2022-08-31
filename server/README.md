@@ -12,8 +12,3 @@ modules i use.</h4>
         <p>for create documentation for server</p>
     </li>
 </ul>
-## documentation for server routes.
-
-<ul>
-    <li>create documentation with swagger.</li>
-</ul>
