@@ -4,7 +4,8 @@ import TableUser from "./TableUser";
 import { Link, useNavigate } from "react-router-dom";
 import { createNewGameTable } from "./../../api/game";
 import { NewMichiGame } from "./../../types/game";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
+import AppContext from "../../context/AppContext";
 
 const TableHeader = () => {
   return (
@@ -17,13 +18,13 @@ const TableHeader = () => {
 
 const TableConfig = ({ isNew }: { isNew: boolean }) => {
   const navigate = useNavigate();
+  const { auth } = useContext(AppContext);
   const [gameState, setGameState] = useState<NewMichiGame>({
     gameName: "",
-    hostId: 0,
   });
   const createNewMichiGameTable = async () => {
     if (gameState.gameName.trim()) {
-      const res = await createNewGameTable(gameState, "");
+      const res = await createNewGameTable(gameState, auth.token);
       if (res.status === 200) return navigate("/app");
       return console.log("error creating game");
     } else {

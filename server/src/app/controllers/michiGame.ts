@@ -4,10 +4,16 @@ import {
   findMichiGameByUserId,
   findOneMIchiGameWithUsernames,
 } from "../models/MichiGame";
+import { MichiGameStart } from "../types/MichiGame";
 
 export const postNewMichiGame: RequestHandler = (req, res, next) => {
   try {
-    createNewMichiGame(req.body, (err, game) => {
+    const id: any = req.user;
+    const game: MichiGameStart = {
+      hostId: id,
+      gameName: req.body.gameName,
+    };
+    createNewMichiGame(game, (err, game) => {
       if (err) return res.status(501).json({ message: err });
       return res.status(200).json(game);
     });
@@ -22,7 +28,7 @@ export const postNewMichiGame: RequestHandler = (req, res, next) => {
 
 export const getMichiGameByUserId: RequestHandler = (req, res, next) => {
   try {
-    const id = req.params.userId;
+    const id: any = req.user;
     findMichiGameByUserId(parseInt(id), (err, games) => {
       if (err) return res.status(501).json({ messge: err });
       return res.status(200).json(games);
@@ -38,7 +44,7 @@ export const getMichiGameByUserId: RequestHandler = (req, res, next) => {
 
 export const getOneMichiGameUsernames: RequestHandler = (req, res, next) => {
   try {
-    const id = req.params.gameId;
+    const id: any = req.user;
     findOneMIchiGameWithUsernames(parseInt(id), (err, game) => {
       if (err) return res.status(501).json({ message: err });
       return res.status(200).json(game);
@@ -51,3 +57,7 @@ export const getOneMichiGameUsernames: RequestHandler = (req, res, next) => {
     );
   }
 };
+
+export default class MichiGameController {
+  public getOneMichiGameById() {}
+}

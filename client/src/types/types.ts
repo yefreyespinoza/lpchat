@@ -1,5 +1,6 @@
 //props interfaces
 export interface GameItemI {
+  gameName: string;
   _id?: string;
   user1?: string;
   user2?: string;

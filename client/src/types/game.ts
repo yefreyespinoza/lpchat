@@ -1,4 +1,5 @@
 export interface NewMichiGame {
-  hostId: number;
   gameName: string;
 }
+
+export interface MichiGameI extends NewMichiGame {}

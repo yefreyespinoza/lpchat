@@ -4,7 +4,7 @@ import {
   MichiGameStart,
   MichiGameUsernames,
 } from "../types/MichiGame";
-import { db, connect } from "../../config/db";
+import { db } from "../../config/db";
 import { OkPacket, RowDataPacket } from "mysql2";
 function findUsername(id: number) {
   const query = "SELECT username FROM users WHERE id = ?";
@@ -15,7 +15,7 @@ function findUsername(id: number) {
 export const createNewMichiGame = (
   game: MichiGameStart,
   cb: (err: Error | null, michiGame: MichiGameI | null) => void
-) => {
+): void => {
   console.log(game);
   const startGame: MichiGameSave = {
     users: [game.hostId, 0],

@@ -27,7 +27,7 @@ function MichiItem(props: GameItemI) {
       <div className="michi-item-options">
         <div>
           <div className="michi-table-name">
-            <span>TableName</span>
+            <span>{props.gameName}</span>
           </div>
           <div className="michi-item-win">
             <span>WIN</span>

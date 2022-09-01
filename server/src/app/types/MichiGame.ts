@@ -45,3 +45,5 @@ export interface MichiGameUsernames extends MichiGamePlay {
   users: [UsernameMichiGame, UsernameMichiGame];
   winId: number;
 }
+
+export interface MichiGame extends MichiGameSave {}
